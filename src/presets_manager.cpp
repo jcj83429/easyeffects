@@ -48,6 +48,7 @@ PresetsManager::PresetsManager()
       multiband_compressor(std::make_unique<MultibandCompressorPreset>()),
       multiband_gate(std::make_unique<MultibandGatePreset>()),
       pitch(std::make_unique<PitchPreset>()),
+      psyclipper(std::make_unique<PsyClipperPreset>()),
       reverb(std::make_unique<ReverbPreset>()),
       rnnoise(std::make_unique<RNNoisePreset>()),
       stereo_tools(std::make_unique<StereoToolsPreset>()) {
@@ -407,6 +408,8 @@ void PresetsManager::save_preset_file(PresetType preset_type, const std::string&
       multiband_gate->write(preset_type, json);
     } else if (name == plugin_name::pitch) {
       pitch->write(preset_type, json);
+    } else if (name == plugin_name::psyclipper) {
+      psyclipper->write(preset_type, json);
     } else if (name == plugin_name::reverb) {
       reverb->write(preset_type, json);
     } else if (name == plugin_name::rnnoise) {
@@ -588,6 +591,8 @@ void PresetsManager::load_preset_file(PresetType preset_type, const std::string&
       multiband_gate->read(preset_type, json);
     } else if (name == plugin_name::pitch) {
       pitch->read(preset_type, json);
+    } else if (name == plugin_name::psyclipper) {
+      psyclipper->read(preset_type, json);
     } else if (name == plugin_name::reverb) {
       reverb->read(preset_type, json);
     } else if (name == plugin_name::rnnoise) {

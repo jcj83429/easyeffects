@@ -53,6 +53,7 @@
 #include "pitch_preset.hpp"
 #include "plugin_name.hpp"
 #include "preset_type.hpp"
+#include "psyclipper_preset.hpp"
 #include "reverb_preset.hpp"
 #include "rnnoise_preset.hpp"
 #include "stereo_tools_preset.hpp"
@@ -141,6 +142,7 @@ class PresetsManager {
   std::unique_ptr<MultibandCompressorPreset> multiband_compressor;
   std::unique_ptr<MultibandGatePreset> multiband_gate;
   std::unique_ptr<PitchPreset> pitch;
+  std::unique_ptr<PsyClipperPreset> psyclipper;
   std::unique_ptr<ReverbPreset> reverb;
   std::unique_ptr<RNNoisePreset> rnnoise;
   std::unique_ptr<StereoToolsPreset> stereo_tools;

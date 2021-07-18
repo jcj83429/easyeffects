@@ -177,6 +177,7 @@ EffectsBaseUi::EffectsBaseUi(const Glib::RefPtr<Gtk::Builder>& builder,
   effects_base->multiband_gate->post_messages = true;
   effects_base->output_level->post_messages = true;
   effects_base->pitch->post_messages = true;
+  effects_base->psyclipper->post_messages = true;
   effects_base->reverb->post_messages = true;
   effects_base->rnnoise->post_messages = true;
   effects_base->spectrum->post_messages = true;
@@ -231,6 +232,7 @@ EffectsBaseUi::~EffectsBaseUi() {
   effects_base->multiband_gate->post_messages = false;
   effects_base->output_level->post_messages = false;
   effects_base->pitch->post_messages = false;
+  effects_base->psyclipper->post_messages = false;
   effects_base->reverb->post_messages = false;
   effects_base->rnnoise->post_messages = false;
   effects_base->spectrum->post_messages = false;
@@ -259,6 +261,7 @@ EffectsBaseUi::~EffectsBaseUi() {
   effects_base->multiband_gate->bypass = false;
   effects_base->output_level->bypass = false;
   effects_base->pitch->bypass = false;
+  effects_base->psyclipper->bypass = false;
   effects_base->reverb->bypass = false;
   effects_base->rnnoise->bypass = false;
   effects_base->spectrum->bypass = false;
@@ -577,6 +580,17 @@ void EffectsBaseUi::add_plugins_to_stack_plugins() {
       effects_base->pitch->output_level.connect(sigc::mem_fun(*pitch_ui, &PitchUi::on_new_output_level));
 
       effects_base->pitch->bypass = false;
+    } else if (name == plugin_name::psyclipper) {
+      auto* psyclipper_ui = PsyClipperUi::add_to_stack(stack_plugins, path);
+
+      psyclipper_ui->bypass->signal_toggled().connect(
+          [=, this]() { effects_base->psyclipper->bypass = psyclipper_ui->bypass->get_active(); });
+
+      effects_base->psyclipper->input_level.connect(sigc::mem_fun(*psyclipper_ui, &PsyClipperUi::on_new_input_level));
+      effects_base->psyclipper->output_level.connect(sigc::mem_fun(*psyclipper_ui, &PsyClipperUi::on_new_output_level));
+      effects_base->psyclipper->protection_reduction.connect(sigc::mem_fun(*psyclipper_ui, &PsyClipperUi::on_new_protection_reduction));
+
+      effects_base->psyclipper->bypass = false;
     } else if (name == plugin_name::reverb) {
       auto* reverb_ui = ReverbUi::add_to_stack(stack_plugins, path);
 

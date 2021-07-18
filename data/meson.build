@@ -24,6 +24,7 @@ install_data([
   'schemas/com.github.wwmm.easyeffects.multibandgate.gschema.xml',
   'schemas/com.github.wwmm.easyeffects.outputlevel.gschema.xml',
   'schemas/com.github.wwmm.easyeffects.pitch.gschema.xml',
+  'schemas/com.github.wwmm.easyeffects.psyclipper.gschema.xml',
   'schemas/com.github.wwmm.easyeffects.reverb.gschema.xml',
   'schemas/com.github.wwmm.easyeffects.rnnoise.gschema.xml',
   'schemas/com.github.wwmm.easyeffects.spectrum.gschema.xml',

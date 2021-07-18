@@ -51,6 +51,7 @@
 #include "pipe_manager.hpp"
 #include "pitch_ui.hpp"
 #include "preset_type.hpp"
+#include "psyclipper_ui.hpp"
 #include "reverb_ui.hpp"
 #include "rnnoise_ui.hpp"
 #include "spectrum_ui.hpp"
@@ -150,6 +151,7 @@ class EffectsBaseUi {
                                                    {plugin_name::multiband_compressor, _("Multiband Compressor")},
                                                    {plugin_name::multiband_gate, _("Multiband Gate")},
                                                    {plugin_name::pitch, _("Pitch")},
+                                                   {plugin_name::psyclipper, _("Psychoacoustic Clipper")},
                                                    {plugin_name::reverb, _("Reverberation")},
                                                    {plugin_name::rnnoise, _("Noise Reduction")},
                                                    {plugin_name::stereo_tools, _("Stereo Tools")}};

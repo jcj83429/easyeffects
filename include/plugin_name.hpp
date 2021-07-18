@@ -45,16 +45,18 @@ constexpr auto multiband_gate = "multiband_gate";
 
 constexpr auto pitch = "pitch";
 
+constexpr auto psyclipper = "psyclipper";
+
 constexpr auto reverb = "reverb";
 
 constexpr auto rnnoise = "rnnoise";
 
 constexpr auto stereo_tools = "stereo_tools";
 
-constexpr std::array<const char* const, 23> list{
+constexpr std::array<const char* const, 24> list{
     autogain,  bass_enhancer,        bass_loudness,  compressor, convolver, crossfeed, crystalizer, deesser,
     delay,     echo_canceller,       equalizer,      exciter,    filter,    gate,      limiter,     loudness,
-    maximizer, multiband_compressor, multiband_gate, pitch,      reverb,    rnnoise,   stereo_tools};
+    maximizer, multiband_compressor, multiband_gate, pitch,      psyclipper,reverb,    rnnoise,     stereo_tools};
 
 }  // namespace plugin_name
 

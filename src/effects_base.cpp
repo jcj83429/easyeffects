@@ -61,6 +61,8 @@ EffectsBase::EffectsBase(std::string tag, const std::string& schema, PipeManager
 
   pitch = std::make_shared<Pitch>(log_tag, "com.github.wwmm.easyeffects.pitch", path + "pitch/", pm);
 
+  psyclipper = std::make_shared<PsyClipper>(log_tag, "com.github.wwmm.easyeffects.psyclipper", path + "psyclipper/", pm);
+
   reverb = std::make_shared<Reverb>(log_tag, "com.github.wwmm.easyeffects.reverb", path + "reverb/", pm);
 
   rnnoise = std::make_shared<RNNoise>(log_tag, "com.github.wwmm.easyeffects.rnnoise", path + "rnnoise/", pm);
@@ -91,6 +93,7 @@ EffectsBase::EffectsBase(std::string tag, const std::string& schema, PipeManager
   plugins.insert(std::make_pair(multiband_compressor->name, multiband_compressor));
   plugins.insert(std::make_pair(multiband_gate->name, multiband_gate));
   plugins.insert(std::make_pair(pitch->name, pitch));
+  plugins.insert(std::make_pair(psyclipper->name, psyclipper));
   plugins.insert(std::make_pair(reverb->name, reverb));
   plugins.insert(std::make_pair(rnnoise->name, rnnoise));
   plugins.insert(std::make_pair(stereo_tools->name, stereo_tools));

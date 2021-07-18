@@ -34,6 +34,7 @@
         <file>ui/pitch.ui</file>
         <file>ui/preset_row.ui</file>
         <file>ui/presets_menu.ui</file>
+        <file>ui/psyclipper.ui</file>
         <file>ui/reverb.ui</file>
         <file>ui/rnnoise.ui</file>
         <file>ui/spectrum.ui</file>
